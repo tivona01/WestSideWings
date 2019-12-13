@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CIS193 Project">
+    <meta name="keywords" content="cis 193, website, javascript">
+    <meta name="author" content="cis 193">
+    
+
+    <title>Westside Wings</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!--Google Fonts-->
+   <link href="https://fonts.googleapis.com/css?family=Cookie|Lato|Raleway|Rubik&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"> 
+
+   <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+   <script src="modernizr.custom.65897.js"></script>
+</head>
+
+
+<!-- Navbar-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+   <div class="container"><a class="navbar-brand" href="index.html"><img src="images/wwlogo2.png" width="100" height="100" alt="logo"></a>
+   <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+            
+<div id="navbarSupportedContent" class="collapse navbar-collapse">
+  <ul class="navbar-nav ml-auto">
+   <li class="nav-item active">
+    <a href="index.html" class="nav-link text-uppercase font-weight-bold">Home<span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a href="about.html" class="nav-link text-uppercase font-weight-bold">About Us</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link text-uppercase font-weight-bold">Menu</a></li>
+  <li class="nav-item"><a href="beer.html" class="nav-link text-uppercase font-weight-bold">Beer</a></li>
+  <li class="nav-item"><a href="catering.html" class="nav-link text-uppercase font-weight-bold">Catering</a></li>
+  <li class="nav-item"><a href="online.html" class="nav-link text-uppercase font-weight-bold">Online Ordering</a></li>
+  <li class="nav-item"><a href="merch.html" class="nav-link text-uppercase font-weight-bold">Merch</a></li>
+  <li class="nav-item"><a href="contact.html" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+  </ul>
+  </div>
+  </div>
+    </nav>
+</header>
+
+<body class="merch">      
+  <div class="merch">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-centered" id="merch">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+  <h1>Merchandise</h1>
+
+  <p> Like our style? Our Merch store is live! Choose from t-shirts, magnets, mugs and more...Stay tuned as more items will be added soon!</p>
+
+</div>
+ </div>
+  </div>
+
+
+<article>
+      <h2>Buy your WestSide Wings Merch</h2>
+      <form>
+         <input type="checkbox" id="item1" value="500" />
+         <label for="item1">Cup Cozy ($5.00)</label>
+         <input type="checkbox" id="item2" value="1000" />
+         <label for="item2">Beer Mug ($10.00)</label>
+         <input type="checkbox" id="item3" value="1500" />
+         <label for="item3">WestSide Wings Socks ($15.00)</label>
+         <input type="checkbox" id="item1" value="2500" />
+         <label for="item1">WestSide Wings T-shirt  ($25.00)</label>
+         <input type="button" value="Calculate" id="sButton"/>
+      </form>
+      <table>
+         <colgroup>
+            <col class="label" />
+            <col class="amount" />
+         </colgroup>
+         <tbody>
+            <tr>
+               <td>Item total</td>
+               <td>0.00</td>
+            </tr>
+            <tr>
+               <td>Tax</td>
+               <td>0.00</td>
+            </tr>
+            <tr>
+               <td>Total with tax</td>
+               <td>$0.00</td>
+            </tr>
+         </tbody>
+      </table>
+   </article>
+   <script>
+      //function to add values of selected check boxes and display total
+      function calcTotal(){
+         var itemTotal = 0;
+         var tax = 0;
+         var totalWithTax = 0;
+         var items = document.getElementsByTagName("input");
+         var cells = document.getElementsByTagName("td");
+
+         for(var i = 0; i < 4; i++){
+            if(items[i].checked){
+               itemTotal += (items[i].value * 1);
+            }
+         }
+      tax = itemTotal * 0.08;
+      totalWithTax = itemTotal + tax;
+      cells[1].innerHTML = (itemTotal / 100).toFixed(2);
+      cells[3].innerHTML = (tax / 100).toFixed(2);
+      cells[5].innerHTML = "$" + (totalWithTax / 100).toFixed(2);
+      }
+      //add event listener to Submit buttom
+      var submitButton = document.getElementById("sButton");
+      if (submitButton.addEventListener){
+         submitButton.addEventListener("click",calcTotal,false);
+      }else if (submitButton.attachEvent){
+         submitButton.attachEvent("onclick",calcTotal);
+      }
+   </script>
+         
+      
+
+      
+<!--Footer -->
+<footer id="footer">
+  &copy;2019 WestSide Wings
+ </footer> 
+
+
+<!-- JavaScript -->
+<!--
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+<!-- <script src="script.js"></script> -->
+
+</body>
+</html>
