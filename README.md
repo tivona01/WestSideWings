@@ -2,9 +2,9 @@
 CIS 193 Final Project
 Pasadena City College
 
-Final group project. I ended up completing the project on my own due to various reasons.
+Final group project I completed on my own. 
 
-This project was based on Javascript. It wasn't necessary to code HTML or CSS from scratch but I preferred to do it that way.
+This project was based on some the taught Javascript in class. It wasn't necessary to code HTML or CSS from scratch but I preferred to do it that way.
 
 I added javascript functionality to various pages.
 Most of the javascript was taken from the text book used in class as per the professor's requirements
